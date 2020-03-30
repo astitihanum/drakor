@@ -1,10 +1,10 @@
 package com.example.drakorbyhn;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.drakorbyhn.adapters.DramaLogoAdapter;
 import com.example.drakorbyhn.models.DramaLogo;
@@ -19,16 +19,17 @@ public class LogoDramaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo_drama);
 
-        RecyclerView dramaView = findViewById(R.id.rv_drama);
+        RecyclerView teamsView = findViewById(R.id.rv_drama);
 
         List<DramaLogo> teams = new ArrayList<>();
-        teams.add(new DramaLogo("https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/360px-Liverpool_FC.svg.png", "Liverpool"));
-        teams.add(new DramaLogo("https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/360px-Manchester_City_FC_badge.svg.png", "Man. City"));
+        teams.add(new DramaLogo("https://en.wikipedia.org/wiki/What%27s_Wrong_with_Secretary_Kim#/media/File:What's_Wrong_with_Secretary_Kim.jpg", "What's Wrong With Secretary Kim"));
+        teams.add(new DramaLogo("https://en.wikipedia.org/wiki/When_the_Weather_Is_Fine_(TV_series)#/media/File:I'll_Find_You_on_a_Beautiful_Day_main_poster.jpg", "When The Weather Is Good"));
+        teams.add(new DramaLogo("https://upload.wikimedia.org/wikipedia/id/thumb/8/83/Logo_PSSI.png/150px-Logo_PSSI.png", "PSSI"));
 
         DramaLogoAdapter adapter = new DramaLogoAdapter(this, teams);
-        dramaView.setAdapter(adapter);
+        teamsView.setAdapter(adapter);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        dramaView.setLayoutManager(layoutManager);
+        teamsView.setLayoutManager(layoutManager);
     }
 }

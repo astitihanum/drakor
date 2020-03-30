@@ -12,20 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drakorbyhn.R;
 import com.example.drakorbyhn.models.DramaLogo;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class DramaLogoAdapter extends RecyclerView.Adapter {
+public class DramaLogoAdapter extends RecyclerView.Adapter<DramaLogoAdapter.ViewHolder> {
+
     private Context context;
     private List<DramaLogo> items;
 
-    public DramaLogoAdapter(ImageView logoImage, TextView nameText) {
-        this.logoImage = logoImage;
-        this.nameText = nameText;
+    public DramaLogoAdapter(Context context, List<DramaLogo> items) {
+        this.context = context;
+        this.items = items;
     }
-
-    ImageView logoImage;
-    TextView nameText;
 
     @NonNull
     @Override
@@ -36,33 +35,23 @@ public class DramaLogoAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-    }
-
-    public DramaLogoAdapter(Context context, List<DramaLogo> items) {
-        this.context = context;
-        this.items = items;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull DramaLogoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DramaLogo item = items.get(position);
-        // Atur image di baris ini, dapat menggunakan Picasso atau Glide
-        holder.nameText.setText(item.getName());
+        //ATUR IMAGE DIBARIS INI, DAPAT MENGGUNAKAN PICASSO ATAU GLIDE
         Picasso.get().load(item.getLogo()).into(holder.logoImage);
+        holder.nameText.setText(item.getName());
     }
 
     @Override
     public int getItemCount() {
-        return (items != null)? items.size() : 0;
+        return (items != null) ? items.size() : 0;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameText;
-        public ImageView logoImage;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView logoImage;
+        TextView nameText;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView){
             super(itemView);
             logoImage = itemView.findViewById(R.id.image_logo);
             nameText = itemView.findViewById(R.id.text_name);
