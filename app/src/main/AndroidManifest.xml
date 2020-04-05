@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogoDramaActivity"></activity>
+        <activity android:name=".FantasiActivity"></activity>
+        <activity android:name=".HistoricalActivity" />
+        <activity android:name=".KomediActivity" />
+        <activity android:name=".GenreDramaActivity" />
+        <activity android:name=".LogoDramaActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
