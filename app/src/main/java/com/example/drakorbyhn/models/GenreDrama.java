@@ -2,23 +2,22 @@ package com.example.drakorbyhn.models;
 
 public class GenreDrama {
 
-    private int pict;
-
+    private int logo;
     private String name;
     private String RowID;
 
-    public GenreDrama(int pict, String name, String rowID) {
-        this.pict = pict;
+    public GenreDrama(int logo, String name, String rowID) {
+        this.logo = logo;
         this.name = name;
         this.RowID = rowID;
     }
 
-    public int getPict() {
-        return pict;
+    public int getLogo() {
+        return logo;
     }
 
-    public void setPict(int pict) {
-        this.pict = pict;
+    public void setLogo(int logo) {
+        this.logo = logo;
     }
 
     public String getName() {

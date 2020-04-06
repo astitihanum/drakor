@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.drakorbyhn.adapters.DramaLogoAdapter;
 import com.example.drakorbyhn.adapters.GenreDramaAdapter;
-import com.example.drakorbyhn.models.DramaLogo;
 import com.example.drakorbyhn.models.GenreDrama;
 
 import java.util.ArrayList;
@@ -23,8 +21,8 @@ public class GenreDramaActivity extends AppCompatActivity {
         RecyclerView genreView = findViewById(R.id.genre_drama);
 
         List<GenreDrama> genre = new ArrayList<>();
-        genre.add(new GenreDrama(R.drawable.hospital_playlist, "Komedi", "1"));
-        genre.add(new GenreDrama(R.drawable.activity_background, "Historical", "2"));
+        genre.add(new GenreDrama(R.drawable.whats_wrong_with_secreatry_kim, "Komedi Romantis", "1"));
+        genre.add(new GenreDrama(R.drawable.crash_landing_on_you, "Drama", "2"));
         genre.add(new GenreDrama(R.drawable.the_king_eternal_monarch, "Fantasi", "3"));
 
         GenreDramaAdapter adapter = new GenreDramaAdapter(this, genre);

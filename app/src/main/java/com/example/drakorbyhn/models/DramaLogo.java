@@ -1,18 +1,25 @@
 package com.example.drakorbyhn.models;
 
 public class DramaLogo {
-    String logo, name;
+    private int logo;
+    private String name;
+    private String pemeran;
+    private String sinopsis;
 
-    public DramaLogo(String logo, String name) {
+    public DramaLogo(int logo, String name, String pemeran, String sinopsis) {
         this.logo = logo;
         this.name = name;
+        this.pemeran = pemeran;
+        this.sinopsis = sinopsis;
     }
 
-    public String getLogo() {
+    public DramaLogo(){}
+
+    public int getLogo() {
         return logo;
     }
 
-    public void setLogo(String logo) {
+    public void setLogo(int logo) {
         this.logo = logo;
     }
 
@@ -23,4 +30,21 @@ public class DramaLogo {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getPemeran() {
+        return pemeran;
+    }
+
+    public void setPemeran(String pemeran) {
+        this.pemeran = pemeran;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
 }

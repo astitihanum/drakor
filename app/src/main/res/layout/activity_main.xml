@@ -8,14 +8,14 @@
 
     <ImageView
         android:id="@+id/image_background"
-        android:layout_width="199dp"
-        android:layout_height="339dp"
+        android:layout_width="642dp"
+        android:layout_height="953dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
-        app:srcCompat="@drawable/activity-background" />
+        app:srcCompat="@drawable/main_background" />
 
     <Button
         android:id="@+id/button_next"

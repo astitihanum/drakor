@@ -12,10 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drakorbyhn.FantasiActivity;
-import com.example.drakorbyhn.HistoricalActivity;
+import com.example.drakorbyhn.DramaActivity;
 import com.example.drakorbyhn.KomediActivity;
 import com.example.drakorbyhn.R;
-import com.example.drakorbyhn.models.DramaLogo;
 import com.example.drakorbyhn.models.GenreDrama;
 import com.squareup.picasso.Picasso;
 
@@ -32,30 +31,29 @@ public class GenreDramaAdapter extends RecyclerView.Adapter<GenreDramaAdapter.Vi
 
     @NonNull
     @Override
-    public GenreDramaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.item_logo, parent, false);
-        return new GenreDramaAdapter.ViewHolder(view);
+                .inflate(R.layout.item_genre_drama, parent, false);
+        return new ViewHolder(view);
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull GenreDramaAdapter.ViewHolder holder, final int position) {
         final GenreDrama item = items.get(position);
         holder.nameText.setText(item.getName());
-        Picasso.get().load(item.getPict()).into(holder.logoImage);
+        Picasso.get().load(item.getLogo()).into(holder.logoImage);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (items.get(position).getRowID().matches("1")){
-                    Intent gotoactivity = new Intent(context, KomediActivity.class);
-                    context.startActivity(gotoactivity);
+                    Intent go = new Intent(context, KomediActivity.class);
+                    context.startActivity(go);
                 } else if (items.get(position).getRowID().matches("2")){
-                    Intent gotoactivity = new Intent(context, HistoricalActivity.class);
-                    context.startActivity(gotoactivity);
+                    Intent go = new Intent(context, DramaActivity.class);
+                    context.startActivity(go);
                 } else if (items.get(position).getRowID().matches("3")){
-                    Intent gotoactivity = new Intent(context, FantasiActivity.class);
-                    context.startActivity(gotoactivity);
+                    Intent go = new Intent(context, FantasiActivity.class);
+                    context.startActivity(go);
                 }
             }
         });
@@ -72,8 +70,8 @@ public class GenreDramaAdapter extends RecyclerView.Adapter<GenreDramaAdapter.Vi
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            logoImage = itemView.findViewById(R.id.image_logo);
-            nameText = itemView.findViewById(R.id.text_name);
+            logoImage = itemView.findViewById(R.id.image);
+            nameText = itemView.findViewById(R.id.genre_drama);
         }
     }
 }

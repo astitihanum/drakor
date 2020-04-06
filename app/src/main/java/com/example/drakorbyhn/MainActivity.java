@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleNext(View view) {
-        Intent intent = new Intent(this, LogoDramaActivity.class);
+        Intent intent = new Intent(this, GenreDramaActivity.class);
         startActivity(intent);
     }
 }

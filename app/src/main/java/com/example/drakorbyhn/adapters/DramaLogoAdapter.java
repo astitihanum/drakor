@@ -1,6 +1,7 @@
 package com.example.drakorbyhn.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drakorbyhn.R;
+import com.example.drakorbyhn.SinopsisActivity;
 import com.example.drakorbyhn.models.DramaLogo;
 import com.squareup.picasso.Picasso;
 
@@ -36,10 +39,20 @@ public class DramaLogoAdapter extends RecyclerView.Adapter<DramaLogoAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DramaLogo item = items.get(position);
-        //ATUR IMAGE DIBARIS INI, DAPAT MENGGUNAKAN PICASSO ATAU GLIDE
-        Picasso.get().load(item.getLogo()).into(holder.logoImage);
+        final DramaLogo item = items.get(position);
         holder.nameText.setText(item.getName());
+        Picasso.get().load(item.getLogo()).into(holder.logoImage);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, SinopsisActivity.class);
+                i.putExtra("logo", item.getLogo());
+                i.putExtra("name", item.getName());
+                i.putExtra("pemeran", item.getPemeran());
+                i.putExtra("sinopsis", item.getSinopsis());
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -53,8 +66,8 @@ public class DramaLogoAdapter extends RecyclerView.Adapter<DramaLogoAdapter.View
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            logoImage = itemView.findViewById(R.id.image_logo);
-            nameText = itemView.findViewById(R.id.text_name);
+            logoImage = itemView.findViewById(R.id.logo);
+            nameText = itemView.findViewById(R.id.name);
         }
     }
 }
