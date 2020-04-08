@@ -22,7 +22,6 @@ public class DramaActivity extends AppCompatActivity {
         RecyclerView logoView = findViewById(R.id.rv_drama);
 
         List<DramaLogo> logo = new ArrayList<>();
-        logo.add(new DramaLogo(R.drawable.hospital_playlist, "Hospital Playlist", " Jo Jung-suk, Yoo Yeon-seok, Jung Kyung-ho, Kim Dae-myung dan Jeon Mi-do", "Hospital Playlist bercerita tentang lima dokter yang telah berteman sejak mereka memasuki sekolah kedokteran pada tahun 1999."));
         logo.add(new DramaLogo(R.drawable.itaewon_class, "Itaewon Class", "Park Seo-joon, Kim Da-mi, Yoo Jae-myung dan Kwon Nara",
             "Itaewon Class menceritakan tetang mantan terpidana Park Sae-roy (Park Seo-joon) yang hidupnya telah terbalik setelah ia dikeluarkan dari sekolah karena meninju perundung, dan ayahnya terbunuh dalam suatu kecelakaan. Mengikuti langkah-langkah ayahnya, ia membuka restoran bar DanBam di Itaewon dan bersama dengan manajer dan stafnya, berusaha keras menuju kesuksesan dan mencapai tingkat yang lebih tinggi."));
         logo.add(new DramaLogo(R.drawable.when_the_weather_is_fine,"When the Weather Is Fine"," Park Min-young dan Seo Kang-joon",

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SinopsisActivity"></activity>
+        <activity android:name=".MedisActivity"></activity>
+        <activity android:name=".SinopsisActivity" />
         <activity android:name=".FantasiActivity" />
         <activity android:name=".DramaActivity" />
         <activity android:name=".KomediActivity" />

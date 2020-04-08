@@ -54,6 +54,9 @@ public class GenreDramaAdapter extends RecyclerView.Adapter<GenreDramaAdapter.Vi
                 } else if (items.get(position).getRowID().matches("3")){
                     Intent go = new Intent(context, FantasiActivity.class);
                     context.startActivity(go);
+                } else if (items.get(position).getRowID().matches("4")) {
+                    Intent go = new Intent(context, FantasiActivity.class);
+                    context.startActivity(go);
                 }
             }
         });

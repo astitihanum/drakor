@@ -24,6 +24,7 @@ public class GenreDramaActivity extends AppCompatActivity {
         genre.add(new GenreDrama(R.drawable.whats_wrong_with_secreatry_kim, "Komedi Romantis", "1"));
         genre.add(new GenreDrama(R.drawable.crash_landing_on_you, "Drama", "2"));
         genre.add(new GenreDrama(R.drawable.the_king_eternal_monarch, "Fantasi", "3"));
+        genre.add(new GenreDrama(R.drawable.hospital_playlist, "Medis", "4"));
 
         GenreDramaAdapter adapter = new GenreDramaAdapter(this, genre);
         genreView.setAdapter(adapter);
