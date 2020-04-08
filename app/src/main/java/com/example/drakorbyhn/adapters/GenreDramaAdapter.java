@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.drakorbyhn.FantasiActivity;
 import com.example.drakorbyhn.DramaActivity;
 import com.example.drakorbyhn.KomediActivity;
+import com.example.drakorbyhn.MedisActivity;
 import com.example.drakorbyhn.R;
 import com.example.drakorbyhn.models.GenreDrama;
 import com.squareup.picasso.Picasso;
@@ -55,7 +56,7 @@ public class GenreDramaAdapter extends RecyclerView.Adapter<GenreDramaAdapter.Vi
                     Intent go = new Intent(context, FantasiActivity.class);
                     context.startActivity(go);
                 } else if (items.get(position).getRowID().matches("4")) {
-                    Intent go = new Intent(context, FantasiActivity.class);
+                    Intent go = new Intent(context, MedisActivity.class);
                     context.startActivity(go);
                 }
             }
